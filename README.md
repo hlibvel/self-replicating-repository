@@ -31,10 +31,18 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+Running the application
+---------------------
+To start the app in dev mode:
 
-Start the application:
 ```bash
 python app.py
+```
+
+To run inside the gunicorn:
+
+```bash
+gunicorn app:app -b 0.0.0.0:8000
 ```
 
 Deploy
