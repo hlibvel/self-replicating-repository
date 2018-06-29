@@ -36,3 +36,24 @@ Start the application:
 ```bash
 python app.py
 ```
+
+Deploy
+-------
+
+Add the remote heroku repository
+
+```bash
+heroku git:remote -a self-replicating-repository
+```
+
+Push code to the Heroku:
+
+```bash
+git push heroku master
+```
+
+If you are deploying to the fresh Heroku application enable the web worker:
+
+```bash
+heroku ps:scale web=1 -a self-replicating-repository
+```
