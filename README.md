@@ -24,3 +24,15 @@ From this moment each time you work with the application switch to that environm
 ```bash
 workon ssr
 ```
+
+Install requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+
+Start the application:
+```bash
+python app.py
+```
