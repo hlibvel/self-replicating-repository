@@ -7,6 +7,7 @@ from config import *
 
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
+
 app.secret_key = 'supersekrit'
 blueprint = make_github_blueprint(
     client_id=CLIENT_ID,
@@ -18,7 +19,7 @@ app.register_blueprint(blueprint, url_prefix="/login")
 
 def get_login():
 	"""Reads GitHub user name"""
-	resp = github.get("/user")
+    resp = github.get("/user")
     assert resp.ok
     return resp.json()["login"]
 
