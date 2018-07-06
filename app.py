@@ -18,14 +18,12 @@ app.register_blueprint(blueprint, url_prefix="/login")
 
 
 def get_login():
-	"""Reads GitHub user name"""
     resp = github.get("/user")
     assert resp.ok
     return resp.json()["login"]
 
 
 def make_a_fork(owner, repo_name):
-	"""Forks requested repository"""
     resp = github.post(f'/repos/{owner}/{repo_name}/forks')
     assert resp.ok
 
